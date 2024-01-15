@@ -51,7 +51,7 @@ Command => <code> python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/mem
 Command => <code> python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump1.mem --profile=Win7SP1x64 cmdline -p 2352 </code>
 <br/>
 <br/>
-<img src="https://imgur.com/K1zVv80.png" height="80%" width="80%" alt="ProcDump Memory Dump">
+<img src="https://imgur.com/LsRVX6r.png" height="80%" width="80%" alt="ProcDump Memory Dump">
 <br/>
 <br/>
 <p>In an incident response engagement, we can use these utilities to capture the image of Malware running on a system.
