@@ -21,32 +21,35 @@ Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memd
 <li>KDGB address value: 0xf80002bfa0a0L</li>
 </oL>
 <br/>
-<h3>Collecting Memory Dump using FTK Imager</h3>
+<h3>Find the list of processes</h3>
 <br/>
-<p>Open FTK Imager: Go to File > Capture Memory > Select Destination Path > Capture Memory</p>
+<p> Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump1.mem --profile=Win7SP1x64 pslist</code></p>
 <br/>
-<img src="https://imgur.com/guy3Nys.png" height="80%" width="80%" alt="FTK Imager Memory Capture">
+<img src="https://imgur.com/T07ndUW.png" height="80%" width="80%" alt="FTK Imager Memory Capture">
+
+<h3>Display processes in Parent and Child Representation</h3>
 <br/>
+Use the Parent-child relationship to detect unusual processes.
 <br/>
-<h3>Collecting Memory Dump: ProcDump (Sysinternals) to retrieve memory image of a specific process</h3>
+<p> Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump1.mem --profile=Win7SP1x64 pstree </code></p>
 <br/>
-<p>Change the Directory to where the procdump.exe file resides, use the calculator application as an example</p>
+<img src="https://imgur.com/td5uSbc.png" height="80%" width="80%">
+
+<img src="https://imgur.com/UZnmFcg.png" height="80%" width="80%">
 <br/>
-<img src="https://imgur.com/Dj1GCrN.png" height="80%" width="80%" alt="ProcDump Directory Change">
-<br/>
-<br/>
-<p>Get Process ID (PID) for the calculator application</p>
-<br/>
-<p>Shell command: <code>Get-Process | findstr -I calc</code></p>
-<br/>
-<p>Results Output: PID = 4420</p>
-<br/>
-<img src="https://imgur.com/ABxLoZm.png" height="80%" width="80%" alt="PID Results Output">
+svchost.exe process creates a cmd.exe child process, where the ping command is used, because we can see the ping.exe process being this will be considered unusual activity. 
 <br/>
 <br/>
-<p>After retrieving PID, use ProcDump to create a full memory dump of this process using:</p>
+<h3> Filtering processes with sum count </h3>
+<p>Finding how many processes with the name "svchost.exe" were running in the system</p>
+Command => <code> python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump1.mem --profile=Win7SP1x64 pslist | grep “svchost.exe” | wc -l </code>
 <br/>
-<p>Command: <code>.\procdump.exe -ma 4420</code></p>
+<br/>
+<img src="https://imgur.com/ZOcBykp.png" height="80%" width="80%" alt="PID Results Output">
+
+<h3> Finding command lines with associated PIDs </h3>
+Command => <code> python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump1.mem --profile=Win7SP1x64 cmdline -p 2352 </code>
+<br/>
 <br/>
 <img src="https://imgur.com/K1zVv80.png" height="80%" width="80%" alt="ProcDump Memory Dump">
 <br/>
