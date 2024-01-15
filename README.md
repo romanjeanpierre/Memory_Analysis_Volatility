@@ -63,49 +63,17 @@ Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memd
 WINWORD.EXE (Microsoft Word) was communicating to the Foreign IP 65[.]111[.]166[.]58 on port 80 (HTTP). Based on knowledge of phishing attacks, this is very likely to be a malicious Word document macro that is downloading malicious software from the mentioned IP address over HTTP.
 <br/>
 <br/>
-<img src="https://imgur.com/Zxb4QuC.png" height="80%" width="80%" alt="Drive Input Selection">
+<h3> Dump specific process and calculate MD5 Hash</h3>
+Filter process ID 2940 information and output to a directory path
+<br/>
+Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump2.mem --profile=Win7SP1x64 procdump -p 2940 -D /home/ubuntu/Desktop</code>
+<br/>
+<img src="https://imgur.com/kXUvhpb.png" height="80%" width="80%" alt="Drive Input Selection">
+<br/>
+Calculate MD5 Hash
+<img src="https://imgur.com/tINj1d6.png" height="80%" width="80%">
 <br/>
 <br/>
-<p>Create Image - Select the output destination for the file. Click Add and change the format type to a .E01 file. This filetype is used by analysis tools, such as the enterprise-grade forensics triage software EnCase.</p>
-<br/>
-<img src="https://imgur.com/MVLtw1f.png" height="80%" width="80%" alt="FTK Imager Disk Image Output">
-<br/>
-<br/>
-<p>Select Output location and filename:</p>
-<br/>
-<img src="https://imgur.com/7o9Ijn0.png" height="80%" width="80%" alt="Output Location and Filename">
-<br/>
-<img src="https://imgur.com/eywXn2y.png" height="80%" width="80%" alt="Output Location and Filename 2">
-<br/>
-<p>Once the disk image is complete, FTK Imager will provide us with hash values for integrity purposes.</p>
-<!-- Add additional content as needed -->
-
-</body>
-</html>
-<p>So we can ensure that the disk image or any copies are the exact same as when it was acquired. This allows us to prove or disprove claims of data corruption or tampering.</p>
-<br/>
-<img src="https://imgur.com/yXysp7b.png" height="80%" width="80%" alt="FTK Imager Disk Image Hash Values">
-<br/>
-<br/>
-<h3>Live Acquisition - Remote KAPE</h3>
-<br/>
-<p>Copy and Paste the KAPE Application from Host to Guest workstation via a RDP connection</p>
-<br/>
-<img src="https://imgur.com/8ImXICP.png" height="80%" width="80%" alt="FTK Imager Disk Image Creation">
-<br/>
-<br/>
-<p>Open KAPE on Guest workstation, Config target options, source, destination and items then > Execute </p>
-<br/>
-<br/>
-<img src="https://imgur.com/3DPZY6Q.png" height="80%" width="80%" alt="Drive Input Selection">
-<br/>
-<br/>
-<p>Exfiltrate Kape output from guest workstation to host workstation and analyze results.</p>
-<br/>
-<img src="https://imgur.com/Irq3N53.png" height="80%" width="80%" alt="FTK Imager Disk Image Output">
-<br/>
-<br/>
-<!-- Add additional sections or content as needed -->
 
 <h2>Conclusion</h2>
 <p>In conclusion, the use of industry-standard tools such as FTK Imager, Sysinternals, and KAPE facilitates efficient and effective digital data acquisition for forensic purposes. The adherence to critical data integrity methodologies, including the Order of Volatility and Chain of Custody, ensures the reliability and admissibility of the acquired evidence in legal proceedings.</p>
