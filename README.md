@@ -52,19 +52,15 @@ Command => <code> python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/mem
 <br/>
 <br/>
 <img src="https://imgur.com/LsRVX6r.png" height="80%" width="80%" alt="ProcDump Memory Dump">
+<h3>Filtering Malicious Network Connections</h3>
+A machine suspected to be infected by some type of malware. We need to identify the harmful IP related to the malware.
+<br/>
+Command => <code>python vol.py -f /home/ubuntu/Desktop/Volatility\ Exercise/memdump2.mem --profile=Win7SP1x64 netscan</code>
 <br/>
 <br/>
-<p>In an incident response engagement, we can use these utilities to capture the image of Malware running on a system.
+<img src="https://imgur.com/cVl6nkP.png" height="80%" width="80%" alt="FTK Imager Disk Image Creation">
 <br/>
-<br/>
-<h3>Collecting Disk Image using FTK Imager</h3>
-<br/>
-<p>Open FTK Imager: Go to File > Create Disk Image > Select Source from Physical Drive</p>
-<br/>
-<img src="https://imgur.com/liZWHGq.png" height="80%" width="80%" alt="FTK Imager Disk Image Creation">
-<br/>
-<br/>
-<p>Select a Drive input</p>
+WINWORD.EXE (Microsoft Word) was communicating to the Foreign IP 65[.]111[.]166[.]58 on port 80 (HTTP). Based on knowledge of phishing attacks, this is very likely to be a malicious Word document macro that is downloading malicious software from the mentioned IP address over HTTP.
 <br/>
 <br/>
 <img src="https://imgur.com/Zxb4QuC.png" height="80%" width="80%" alt="Drive Input Selection">
