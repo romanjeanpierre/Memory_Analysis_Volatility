@@ -76,7 +76,5 @@ Calculate MD5 Hash
 <br/>
 
 <h2>Conclusion</h2>
-<p>In conclusion, the use of industry-standard tools such as FTK Imager, Sysinternals, and KAPE facilitates efficient and effective digital data acquisition for forensic purposes. The adherence to critical data integrity methodologies, including the Order of Volatility and Chain of Custody, ensures the reliability and admissibility of the acquired evidence in legal proceedings.</p>
-
-<p>This project walkthrough provides a comprehensive guide to collecting memory dumps and disk images, crucial steps in investigating and responding to incidents involving potentially compromised workstations.</p>
+<p>In conclusion, by leveraging Volatility we can successfully identify and analyze potential security incidents, malware infections, and suspicious activities within memory dump data.</p>
 
